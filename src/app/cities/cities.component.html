@@ -1,0 +1,13 @@
+
+<div>
+    <label>Search:
+      <input [(ngModel)]="query" (input)="handleChange()" placeholder="Search..."/>
+    </label>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let city of cities"> 
+        <a class="col-1-4" routerLink="/city/{{city.title}}"> {{city.title}}</a>
+      </li>
+    </ul>
+  </div>

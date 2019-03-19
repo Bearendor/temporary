@@ -1,0 +1,9 @@
+<div *ngIf="city"> 
+  <h2>Title: {{city.title}}</h2>
+  <p>Lattitude and longitude: <span>{{city.latt_long}}</span></p>
+  <p>Location type: <span>{{city.location_type}}</span></p>
+  <p>WoeID: <span>{{city.woeid}}</span></p>  
+</div>
+
+<button (click)="goBack()">Back</button>
+ 
