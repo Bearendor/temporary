@@ -10,7 +10,6 @@ import {City} from './city';
 export class CitiesComponent implements OnInit {
 	query = '';
 	cities = [];
-	transferedCity = {};
 
 	handleChange(): void {
 		if(this.query) {
@@ -21,11 +20,6 @@ export class CitiesComponent implements OnInit {
 					console.log(json)
 				})
 		}	
-	}
-
-	handleClick(city): void {
-		this.transferedCity = city;
-		console.log(this.transferedCity)
 	}
 
 	constructor() { }

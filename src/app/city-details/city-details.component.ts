@@ -10,6 +10,7 @@ import { City } from '../cities/city';
 })
 export class CityDetailsComponent implements OnInit {
   city : City;
+  threeDays = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,8 +27,18 @@ export class CityDetailsComponent implements OnInit {
 				.then(response => response.json())
 				.then(json => {
           this.city = json[0];
-          console.log(json)
+          console.log(json);
+          fetch("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/"+json[0].woeid)
+            .then(response => response.json())
+            .then(json => {
+              console.log("New: ", json)
+              this.threeDays = json.consolidated_weather;
+            })
 				})
+  }
+
+  test = () => {
+    console.log(this.threeDays)
   }
 
   goBack(): void {

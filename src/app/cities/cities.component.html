@@ -5,7 +5,7 @@
     </label>
   </div>
   <div>
-    <ul>
+    <ul *ngIf="cities.length > 0">
       <li *ngFor="let city of cities"> 
         <a class="col-1-4" routerLink="/city/{{city.title}}"> {{city.title}}</a>
       </li>

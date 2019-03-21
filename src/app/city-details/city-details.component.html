@@ -5,5 +5,15 @@
   <p>WoeID: <span>{{city.woeid}}</span></p>  
 </div>
 
+<table>
+  <tr *ngFor="let day of threeDays">
+    <td>
+      <p>Max temperature: 
+        <span> {{day.max_temp}}</span>
+      </p>
+    </td>
+  </tr>
+</table>
 <button (click)="goBack()">Back</button>
+<button (click)="test()">Test</button>
  
